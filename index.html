@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+
+
+   
+
+
+    
+    
+    
+    
+    <script src="script.js">
+        var array=[]
+        var div=document.createElement('div');
+        
+        var label=document.createElement('label');
+        label.setAttribute('class','label');
+        label.innerHTML='First Name';
+        div.appendChild(label)
+
+        var input=document.createElement('input');
+        input.setAttribute('id','value1');input.setAttribute('value','first name')
+        div.appendChild(input);
+
+        var label2=document.createElement('label');
+        label2.setAttribute('class','label');
+        label2.innerHTML="Last Name";
+        div.appendChild(label2)
+
+
+        var input2=document.createElement('input')
+        input2.setAttribute('id','value2');
+        div.appendChild(input2)
+        
+        var space=document.createElement('br');
+        div.appendChild(space)
+
+        var div2=document.createElement('div')
+        
+        var table=document.createElement('table');
+        table.setAttribute('class','table table-dark');
+        div2.appendChild(table)
+
+         var thead=document.createElement('thead');
+        table.appendChild(thead);
+    
+        var tr1=document.createElement('tr')
+        thead.appendChild(tr1);
+
+        var th1=document.createElement('th');
+        th1.innerHTML='First Name'
+        tr1.appendChild(th1)
+
+        var button=document.createElement('button');
+        button.innerHTML='Submit';
+        button.addEventListener('click',foo)
+        function getdata()
+        {
+        //     array.push({'firstname':document.getElementById('value1').value}) 
+        //  console.log(array)
+        //    for(var i in array)
+        //    {
+              
+        //     if(!document.getElementById('f'+i))
+        //     {
+        //         var tr2=document.createElement('tr');//Creating the Second Row
+               
+        //       var td1=document.createElement('td');//Creating the Data 1
+        //       td1.setAttribute('id','f'+i)
+        //       tr2.append(td1);
+        //       table.append(tr2);
+
+        //       document.getElementById('f'+i).innerHTML=array[i].firstname
+        //     }
+        //     }
+        }
+    function foo()
+        {
+            // getdata()
+            array.push({'firstname':document.getElementById('value1').value,'lastname':document.getElementById('value2').value}) 
+            console.log(array)
+           for(var i in array)
+           {
+              
+            if(!document.getElementById('f'+i) && !document.getElementById('l'+i))
+            {
+                var tr2=document.createElement('tr');//Creating the Second Row
+               
+              var td1=document.createElement('td');//Creating the Data 1
+              td1.setAttribute('id','f'+i)
+              tr2.append(td1);
+              table.append(tr2);
+                document.getElementById('f'+i).innerHTML=array[i].firstname
+            
+           
+         
+                var td2=document.createElement('td');
+                td2.setAttribute('id','l'+i);
+                tr2.append(td2);
+                table.append(tr2)
+
+                document.getElementById('l'+i).innerHTML=array[i].lastname
+           
+            
+            
+            
+            
+            
+            
+            }
+            
+            }
+        }
+
+
+
+
+
+        // document.body.append(div,div2, button)
+    </script>
+</body>
+</html>
